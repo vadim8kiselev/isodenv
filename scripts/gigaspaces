@@ -1,19 +1,19 @@
 #! /bin/sh
 case "$1" in
 start)
-	bash /isodenv/scripts/start_gsa.sh
-	;;
+  bash /isodenv/scripts/start_gsa.sh
+  ;;
 status)
   #bash /isodenv/scripts/...
   echo "command does not work"
   ;;
 kill)
-	sudo bash /isodenv/scripts/gscheck.sh
-	;;
+  sudo bash /isodenv/scripts/gscheck.sh
+  ;;
 restart)
-	sudo bash /isodenv/scripts/gscheck.sh
-	bash /isodenv/scripts/start_gsa.sh
-	;;
+  sudo bash /isodenv/scripts/gscheck.sh
+  bash /isodenv/scripts/start_gsa.sh
+  ;;
 start-ui)
   bash /isodenv/scripts/gs-webui-start.sh
   ;;
@@ -21,17 +21,17 @@ kill-ui)
   sudo bash /isodenv/scripts/gs-webui-stop.sh
   ;;
 restart-ui)
-	sudo bash /isodenv/scripts/gs-webui-stop.sh
+  sudo bash /isodenv/scripts/gs-webui-stop.sh
   bash /isodenv/scripts/gs-webui-start.sh
-	;;
+  ;;
 health-check)
-	bash /isodenv/scripts/health_check.sh
-	;;
+  bash /isodenv/scripts/health_check.sh
+  ;;
 deploy-app)
-	bash /isodenv/scripts/deploy_script.sh
-	;;
+  bash /isodenv/scripts/deploy_script.sh
+  ;;
 *)
-	echo "Usage: service gigaspaces {start|stop|restart|status|start-ui|kill-ui|restart-ui|health-check|deploy-app}" > &2
-	exit 1
-	;;
+  echo "Usage: service gigaspaces {start|stop|restart|status|start-ui|kill-ui|restart-ui|health-check|deploy-app}" > &2
+  exit 1
+  ;;
 esac
