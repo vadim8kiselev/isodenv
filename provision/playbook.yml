@@ -75,6 +75,11 @@
     - name: Install curl
       apt: name=curl force=yes state=present update_cache=yes
       sudo: yes
-
-
-    
+      
+    - name: Install gigaspaces-process
+      command: ln -sf /isodenv/scripts/gigaspaces /etc/init.d/gigaspaces
+      sudo: yes
+      
+    - name: Add rights for gigaspaces-process
+      command: chmod +x /etc/init.d/gigaspaces
+      sudo: yes
