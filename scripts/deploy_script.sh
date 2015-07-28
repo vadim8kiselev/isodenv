@@ -20,21 +20,21 @@ HEALTHCHECK_URL="http://localhost:8080/petclinic-web/"
 #######################
 
 #kill_gs
-sudo bash /isodenv/scripts/gscheck.sh
+sudo bash /isodenv/scripts/lib/gscheck.sh
 
 #restart_webui
 if $RUN_WEBUI; then
-  bash /isodenv/scripts/gs-webui-stop.sh
-  bash /isodenv/scripts/gs-webui-start.sh
+  bash /isodenv/scripts/lib/gs-webui-stop.sh
+  bash /isodenv/scripts/lib/gs-webui-start.sh
 fi
 
 #start_gs
-bash /isodenv/scripts/start_gsa.sh
+bash /isodenv/scripts/lib/start_gsa.sh
 
 #deployment artifacts
 deploy_app
 
 #health_check
 if $DO_HEALTHCHECK; then
-  bash /isodenv/scripts/health_check.sh
+  bash /isodenv/scripts/lib/health_check.sh
 fi
