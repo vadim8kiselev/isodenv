@@ -1,0 +1,76 @@
+- hosts: all
+  vars:
+    REPO_IP: "%SERV_IP%"
+    JAVA_DISTR: "%JAVA_SERV%"
+    JAVA_HOME: "%JAVA%"
+    GS_DISTR: "%GS_SERV%"
+    GS_HOME: "%GS_HOME%"
+  tasks:
+    - name: Add group
+      group: name=deployer
+      sudo: yes
+
+    - name: Add user
+      user: name=deployer group=deployer
+      sudo: yes
+
+    - name: Add host in group
+      user: name=vagrant group=deployer
+      sudo: yes
+
+    - name: Get GigaSpaces
+      get_url: url={{REPO_IP}}{{GS_DISTR}} dest=/tmp/gs.tar.gz
+
+    - name: Create /srv/prop/gigaspaces/
+      file: path=/srv/prop/gigaspaces/ state=directory
+      sudo: yes
+
+    - name: Change group for /srv/prop/
+      command: chgrp -R deployer /srv/prop/
+      sudo: yes
+
+    - name: Get rights for group
+      command: chmod -R g+rwx /srv/prop/ /isodenv /configs
+      sudo: yes
+
+    - name: Unpack GigaSpaces in /srv/prop/gigaspaces/
+      unarchive: src=/tmp/{{GS_DISTR}} dest=/srv/prop/gigaspaces copy=no
+      sudo: yes
+
+    - name: Delete GS archive
+      command: rm -rf /tmp/{{GS_DISTR}}
+      sudo: yes
+
+    - name: Add symbolic link in /gigaspaces/current on GS_HOME
+      command: ln -sf {{GS_HOME}} /srv/prop/gigaspaces/current
+      sudo: yes
+
+    - name: Add rights for /srv/prop
+      command: chmod -R 777 /srv/prop/
+      sudo: yes
+
+    - name: Create start_gsa.sh
+      shell: cp /isodenv/scripts/lib/start_gsa.sh /srv/prop/gigaspaces/current/
+      sudo: yes
+
+    - name: Get Java7 JDK Oracle
+      get_url: url={{REPO_IP}}{{JAVA_DISTR}} dest=/tmp/{{JAVA_DISTR}}
+
+    - name: Create /srv/prop/jdk
+      file: path=/srv/prop/jdk/ state=directory
+      sudo: yes
+
+    - name: Unpack Java in /srv/prop/jdk
+      unarchive: src=/tmp/{{JAVA_DISTR}} dest=/srv/prop/jdk copy=no
+      sudo: yes
+
+    - name: Delete Java archive
+      command: rm -rf /tmp/{{JAVA_DISTR}}
+      sudo: yes
+
+    - name: Set Java alternatives
+      command: update-alternatives --install "/usr/bin/java" "java" {{JAVA_HOME}}"bin/java" 1
+      sudo: yes
+
+
+    
