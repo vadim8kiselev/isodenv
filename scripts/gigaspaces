@@ -5,7 +5,7 @@ start)
 	;;
 status)
   #bash /isodenv/scripts/...
-  echo 'command doesn't work'
+  echo "command does not work"
   ;;
 kill)
 	sudo bash /isodenv/scripts/gscheck.sh
