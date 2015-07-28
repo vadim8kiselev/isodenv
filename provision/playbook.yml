@@ -50,7 +50,7 @@
       sudo: yes
 
     - name: Create start_gsa.sh
-      shell: cp /isodenv/scripts/lib/start_gsa.sh /srv/prop/gigaspaces/current/
+      shell: cp /isodenv/scripts/start_gsa.sh /srv/prop/gigaspaces/current/
       sudo: yes
 
     - name: Get Java7 JDK Oracle
