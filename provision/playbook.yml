@@ -71,6 +71,10 @@
     - name: Set Java alternatives
       command: update-alternatives --install "/usr/bin/java" "java" {{JAVA_HOME}}"bin/java" 1
       sudo: yes
+      
+    - name: Install curl
+      apt: name=curl force=yes state=present update_cache=yes
+      sudo: yes
 
 
     
