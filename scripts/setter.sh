@@ -68,6 +68,8 @@ sed -i "s#%JAVA%#${JAVA}#g" ${ISODENV_PATH}/provision/playbook.yml
 sed -i "s#%GS_SERV%#${GS_SERV}#g" ${ISODENV_PATH}/provision/playbook.yml
 sed -i "s#%GS_HOME%#${GS_HOME}#g" ${ISODENV_PATH}/provision/playbook.yml
 
+cd ${ISODENV_PATH}/..
+vagrant init
 mv ${ISODENV_PATH}/Vagrantfile ${ISODENV_PATH}/..
 
 #sudo rm ${ISODENV_PATH}/scripts/setter.sh
