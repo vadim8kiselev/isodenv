@@ -55,7 +55,8 @@ GS_HOME='/srv/prop/gigaspaces/gigaspaces-xap-premium-9.6.2-ga'
 
 sed -i "s#%RUN_UI%#${RUN_UI}#g" ${ISODENV_PATH}/scripts/deploy_script.sh
 sed -i "s#%DO_HC%#${DO_HC}#g" ${ISODENV_PATH}/scripts/deploy_script.sh
-sed -i "s#%HC_URL%#${HC_URL}#g" ${ISODENV_PATH}/scripts/deploy_script.sh
+
+sed -i "s#%HC_URL%#${HC_URL}#g" ${ISODENV_PATH}/scripts/lib/health_check.sh
 
 sed -i "s#%ISODENV%#${ISODENV_PATH}#g" ${ISODENV_PATH}/Vagrantfile
 sed -i "s#%CONFIGS%#${CONFIGS_PATH}#g" ${ISODENV_PATH}/Vagrantfile
