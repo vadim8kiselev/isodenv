@@ -17,8 +17,6 @@ RUN_WEBUI=%RUN_UI%
 
 #do health-check after deployment
 DO_HEALTHCHECK=%DO_HC%
-HEALTHCHECK_URL="%HC_URL%"
-
 
 #######################
 #EXECUTE OF DEPLOYMENT#
