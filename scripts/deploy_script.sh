@@ -3,8 +3,8 @@
 #list of artifacts for deployment
 function deploy_app {
 
-/srv/prop/gigaspaces/current/bin/gs.sh "-initialization-timeout 20000 deploy -sla file:///configs/sla.xml /vagrant/petclinic-gs/petclinic-processor/target/petclinic-processor.jar"
-/srv/prop/gigaspaces/current/bin/gs.sh "-initialization-timeout 20000 deploy -sla file:///configs/sla.xml /vagrant/petclinic-gs/petclinic-web/target/petclinic-web.war"
+/srv/prop/gigaspaces/current/bin/gs.sh "-initialization-timeout 20000 deploy -sla file:///configs/sla.xml /vagrant/petclinic-processor/target/petclinic-processor.jar"
+/srv/prop/gigaspaces/current/bin/gs.sh "-initialization-timeout 20000 deploy -sla file:///configs/sla.xml /vagrant/petclinic-web/target/petclinic-web.war"
 }
 
 
@@ -13,10 +13,10 @@ function deploy_app {
 #######################
 
 #restart WEB_UI
-RUN_WEBUI=%RUN_UI%
+RUN_WEBUI=false
 
 #do health-check after deployment
-DO_HEALTHCHECK=%DO_HC%
+DO_HEALTHCHECK=true
 
 #######################
 #EXECUTE OF DEPLOYMENT#
