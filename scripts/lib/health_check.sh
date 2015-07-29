@@ -1,5 +1,7 @@
 #!/bin/bash
 
+HEALTHCHECK_URL="%HC_URL%"
+
 success=$(curl -Is $HEALTHCHECK_URL | head -n 1)
 
 if [ "$success" != "" ]
