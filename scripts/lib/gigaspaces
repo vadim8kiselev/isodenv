@@ -28,10 +28,10 @@ health-check)
   bash /isodenv/scripts/lib/health_check.sh
   ;;
 deploy-app)
-  bash /isodenv/scripts/lib/deploy_script.sh
+  bash /isodenv/scripts/deploy_script.sh
   ;;
 *)
-  echo "Usage: service gigaspaces {start|stop|restart|status|start-ui|kill-ui|restart-ui|health-check|deploy-app}" > &2
+  echo "Usage: service gigaspaces {start|stop|restart|status|start-ui|kill-ui|restart-ui|health-check|deploy-app}" >&2
   exit 1
   ;;
 esac
