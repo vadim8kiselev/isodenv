@@ -7,12 +7,17 @@ function deploy_app {
 /srv/prop/gigaspaces/current/bin/gs.sh "deploy -sla file:///configs/sla.xml /vagrant/petclinic-gs/petclinic-web/target/petclinic-web.war"
 }
 
+
+#######################
+#INSTALL VARIABLES#####
+#######################
+
 #restart WEB_UI
-RUN_WEBUI=true
+RUN_WEBUI=%RUN_UI%
 
 #do health-check after deployment
-DO_HEALTHCHECK=true
-HEALTHCHECK_URL="http://localhost:8080/petclinic-web/"
+DO_HEALTHCHECK=%DO_HC%
+HEALTHCHECK_URL="%HC_URL%"
 
 
 #######################
