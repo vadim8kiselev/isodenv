@@ -1,18 +1,17 @@
 #! /bin/sh
 case "$1" in
 start)
-  bash /isodenv/scripts/lib/start_gsa.sh
+  bash /isodenv/scripts/lib/start-gsa.sh
   ;;
 status)
-  #bash /isodenv/scripts/lib/...
-  echo "command does not work"
+  bash /isodenv/scripts/lib/status-gs.sh
   ;;
 kill)
-  sudo bash /isodenv/scripts/lib/gscheck.sh
+  sudo bash /isodenv/scripts/lib/gs-kill.sh
   ;;
 restart)
-  sudo bash /isodenv/scripts/lib/gscheck.sh
-  bash /isodenv/scripts/lib/start_gsa.sh
+  sudo bash /isodenv/scripts/lib/gs-kill.sh
+  bash /isodenv/scripts/lib/start-gsa.sh
   ;;
 start-ui)
   bash /isodenv/scripts/lib/gs-webui-start.sh
@@ -25,13 +24,13 @@ restart-ui)
   bash /isodenv/scripts/lib/gs-webui-start.sh
   ;;
 health-check)
-  bash /isodenv/scripts/lib/health_check.sh
+  bash /isodenv/scripts/lib/health-check.sh
   ;;
-deploy-app)
-  bash /isodenv/scripts/deploy_script.sh
+deploy)
+  bash /isodenv/scripts/deploy-script.sh
   ;;
 *)
-  echo "Usage: service gigaspaces {start|stop|restart|status|start-ui|kill-ui|restart-ui|health-check|deploy-app}" >&2
+  echo "Usage: service gigaspaces {start|stop|restart|status|start-ui|kill-ui|restart-ui|health-check|deploy}" >&2
   exit 1
   ;;
 esac

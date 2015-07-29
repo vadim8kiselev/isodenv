@@ -13,7 +13,7 @@ function deploy_app {
 #######################
 
 #restart WEB_UI
-RUN_WEBUI=false
+RUN_WEBUI=true
 
 #do health-check after deployment
 DO_HEALTHCHECK=true
@@ -23,7 +23,7 @@ DO_HEALTHCHECK=true
 #######################
 
 #kill_gs
-sudo bash /isodenv/scripts/lib/gscheck.sh
+sudo bash /isodenv/scripts/lib/gs-kill.sh
 
 #restart_webui
 if $RUN_WEBUI; then
@@ -32,12 +32,12 @@ if $RUN_WEBUI; then
 fi
 
 #start_gs
-bash /isodenv/scripts/lib/start_gsa.sh
+bash /isodenv/scripts/lib/start-gsa.sh
 
 #deployment artifacts
 deploy_app
 
 #health_check
 if $DO_HEALTHCHECK; then
-  bash /isodenv/scripts/lib/health_check.sh
+  bash /isodenv/scripts/lib/health-check.sh
 fi

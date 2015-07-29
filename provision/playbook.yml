@@ -1,10 +1,10 @@
 - hosts: all
   vars:
-    REPO_IP: "%SERV_IP%"
-    JAVA_DISTR: "%JAVA_SERV%"
-    JAVA_HOME: "%JAVA%"
-    GS_DISTR: "%GS_SERV%"
-    GS_HOME: "%GS_HOME%"
+    REPO_IP: "http://172.26.6.6:8080/"
+    JAVA_DISTR: "jdk-7u79-linux-x64.gz"
+    JAVA_HOME: "/srv/prop/jdk/jdk1.7.0_79/"
+    GS_DISTR: "gs.tar.gz"
+    GS_HOME: "/srv/prop/gigaspaces/gigaspaces-xap-premium-9.6.2-ga"
   tasks:
     - name: Add group
       group: name=deployer
@@ -50,7 +50,7 @@
       sudo: yes
 
     - name: Create start_gsa.sh
-      shell: cp /isodenv/scripts/lib/start_gsa.sh /srv/prop/gigaspaces/current/
+      shell: cp /isodenv/scripts/lib/start-gsa.sh /srv/prop/gigaspaces/current/
       sudo: yes
 
     - name: Get Java7 JDK Oracle
