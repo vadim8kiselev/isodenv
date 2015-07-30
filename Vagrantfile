@@ -6,7 +6,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 8099, host: 8099 
   
   config.vm.synced_folder "./", "/isodenv"
-  config.vm.synced_folder "../configs", "/configs"  
+  config.vm.synced_folder "./configs", "/configs"  
   config.vm.synced_folder "../", "/vagrant"
 
   config.vm.provider "virtualbox" do |vb|
