@@ -23,21 +23,21 @@ DO_HEALTHCHECK=true
 #######################
 
 #kill_gs
-sudo bash /isodenv/scripts/lib/gs-kill.sh
+sudo bash /isodenv/scripts/bin/gs-kill.sh
 
 #restart_webui
 if $RUN_WEBUI; then
-  bash /isodenv/scripts/lib/gs-webui-stop.sh
-  bash /isodenv/scripts/lib/gs-webui-start.sh
+  bash /isodenv/scripts/bin/gs-webui-stop.sh
+  bash /isodenv/scripts/bin/gs-webui-start.sh
 fi
 
 #start_gs
-bash /isodenv/scripts/lib/start-gsa.sh
+bash /isodenv/scripts/bin/start-gsa.sh
 
 #deployment artifacts
 deploy_app
 
 #health_check
 if $DO_HEALTHCHECK; then
-  bash /isodenv/scripts/lib/health-check.sh
+  bash /isodenv/scripts/bin/health-check.sh
 fi

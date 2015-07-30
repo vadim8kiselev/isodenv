@@ -46,7 +46,7 @@
       sudo: yes
 
     - name: Create start_gsa.sh
-      shell: cp /isodenv/scripts/lib/start-gsa.sh /srv/prop/gigaspaces/current/
+      shell: cp /isodenv/scripts/bin/start-gsa.sh /srv/prop/gigaspaces/current/
       sudo: yes
 
     - name: Get Java7 JDK Oracle
@@ -73,7 +73,7 @@
       sudo: yes
       
     - name: Install gigaspaces-process
-      command: ln -sf /isodenv/scripts/lib/gigaspaces /etc/init.d/gigaspaces
+      command: ln -sf /isodenv/scripts/bin/gigaspaces /etc/init.d/gigaspaces
       sudo: yes
       
     - name: Add rights for gigaspaces-process
