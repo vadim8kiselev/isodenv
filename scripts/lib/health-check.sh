@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HEALTHCHECK_URL="%HC_URL%"
+HEALTHCHECK_URL="http://localhost:8080/petclinic-web/"
 
 success=$(curl -Is $HEALTHCHECK_URL | head -n 1)
 
