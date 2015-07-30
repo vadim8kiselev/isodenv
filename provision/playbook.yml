@@ -29,10 +29,6 @@
       command: chgrp -R deployer /srv/prop/
       sudo: yes
 
-    - name: Get rights for group
-      command: chmod -R g+rwx /srv/prop/ /isodenv /configs
-      sudo: yes
-
     - name: Unpack GigaSpaces in /srv/prop/gigaspaces/
       unarchive: src=/tmp/{{GS_DISTR}} dest=/srv/prop/gigaspaces copy=no
       sudo: yes
