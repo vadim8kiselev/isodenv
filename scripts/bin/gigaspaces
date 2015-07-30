@@ -6,7 +6,7 @@ start)
 status)
   bash /isodenv/scripts/bin/status-gs.sh
   ;;
-kill)
+stop)
   sudo bash /isodenv/scripts/bin/gs-kill.sh
   ;;
 restart)
