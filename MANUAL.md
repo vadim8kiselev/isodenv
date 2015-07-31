@@ -14,9 +14,9 @@ Isolated Developer Environment for XAP Gigaspaces developers
 - Change place-holders in provision/playbook.yml:
   - %SERV_IP% - ip-address of server (with your Java and Gigaspaces)
   - %JAVA_SERV% - name Java-package on server 
-  - %JAVA% - name Java-folder on machine
+  - %JAVA% - path to Java-folder on machine
   - %GS_SERV% - name GS-package on server
-  - %GS_HOME% - name GS-folder on machine
+  - %GS_HOME% - path to GS-folder on machine
 
 - Configurate your **gs.sh** commands in isodenv/scripts/deploy_script.sh 
 - Setup RUN_WEBUI, DO_HEALTHCHECK (optionally)
