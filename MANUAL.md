@@ -5,8 +5,7 @@ Isolated Developer Environment for XAP Gigaspaces developers
 
 ## More details manual
 ### Downloading
-- **git init** in root of your project
-- **git clone https://github.com/vadim8kiselev/isodenv.git**
+- **git clone https://github.com/vadim8kiselev/isodenv.git** in root of your project
 
 ### Installation
 - Move your sla.xml in isodenv/configs/
