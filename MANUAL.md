@@ -9,9 +9,7 @@ Isolated Developer Environment for XAP Gigaspaces developers
 - **git clone https://github.com/vadim8kiselev/isodenv.git**
 
 ### Installation
-- Change place-holders in Vagrantfile:
-  - %ISODENV% - path to isodenv/
-  - %CONFIGS% - path to your project configs(sla for ex.)
+- Move your sla.xml in isodenv/configs/
    
 - Change place-holders in provision/playbook.yml:
   - %SERV_IP% - ip-address of server (with your Java and Gigaspaces)
