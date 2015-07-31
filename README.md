@@ -10,8 +10,7 @@ ISODENV it is project for developer, which can help him to deploy his project in
 
 ## How does it work?
 ### Downloading
-- **git init** in root of your project
-- **git clone https://github.com/vadim8kiselev/isodenv.git**
+- **git clone https://github.com/vadim8kiselev/isodenv.git** in root of your project
 
 ### Installation
 - Move your sla.xml in isodenv/configs/
