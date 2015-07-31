@@ -14,6 +14,7 @@ ISODENV it is project for developer, which can help him to deploy his project in
 - **git clone https://github.com/vadim8kiselev/isodenv.git**
 
 ### Installation
+- Move your sla.xml in isodenv/configs/
 - **cd isodenv/**
 - Tap **[here](https://github.com/vadim8kiselev/isodenv/blob/dev/MANUAL.md)** for more details configurate of your ISODENV
 - Configurate your **gs.sh** commands in isodenv/scripts/deploy_script.sh
