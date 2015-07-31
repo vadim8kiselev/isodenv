@@ -21,7 +21,7 @@ ISODENV it is project for developer, which can help him to deploy his project in
 
 ### Usage
 - **vagrant ssh --command "service gigaspaces deploy"** for deploy artifacts
-- **vagrant ssh --command "service gigaspaces --help"** for discover about other commands
+- **vagrant ssh --command "service gigaspaces help"** for discover about other commands
 
 ## Dependencies
 - Git
