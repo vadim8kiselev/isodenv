@@ -1,0 +1,49 @@
+#! /bin/sh
+case "$1" in
+start)
+  bash /isodenv/scripts/bin/start-gsa.sh
+  ;;
+status)
+  bash /isodenv/scripts/bin/status-gs.sh
+  ;;
+stop)
+  sudo bash /isodenv/scripts/bin/gs-kill.sh
+  ;;
+restart)
+  sudo bash /isodenv/scripts/bin/gs-kill.sh
+  bash /isodenv/scripts/bin/start-gsa.sh
+  ;;
+start-ui)
+  bash /isodenv/scripts/bin/gs-webui-start.sh
+  ;;
+kill-ui)
+  sudo bash /isodenv/scripts/bin/gs-webui-stop.sh
+  ;;
+restart-ui)
+  sudo bash /isodenv/scripts/bin/gs-webui-stop.sh
+  bash /isodenv/scripts/bin/gs-webui-start.sh
+  ;;
+health-check)
+  bash /isodenv/scripts/bin/health-check.sh
+  ;;
+deploy)
+  bash /isodenv/scripts/deploy-script.sh
+  ;;
+*)
+  echo "Usage: service gigaspaces {start|stop|restart|status|start-ui|kill-ui|restart-ui|health-check|deploy}
+
+Common commands:
+     start        starts Gigaspaces agent (via nohup)
+     stop         stops all Gigaspaces processes (GS agent)
+     restart      restarts Gigaspaces agent
+     status       outputs status of the Gigaspaces
+     start-ui     starts WebUI processes
+     kill-ui      stops WebUI processes (waits 1m)
+     restart-ui   restarts WebUI
+     health-check outputs status of project after deployment
+     deploy       deployment of the application
+
+       " >&2
+  exit 1
+  ;;
+esac
